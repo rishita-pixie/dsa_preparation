@@ -6,6 +6,7 @@ Data Structures and Algorithms practice repository containing interview-ready so
 ## Math
 |  |
 | ------- |
+| [0062-unique-paths](https://github.com/rishita-pixie/dsa_preparation/tree/master/0062-unique-paths) |
 | [0887-super-egg-drop](https://github.com/rishita-pixie/dsa_preparation/tree/master/0887-super-egg-drop) |
 ## Binary Search
 |  |
@@ -14,5 +15,10 @@ Data Structures and Algorithms practice repository containing interview-ready so
 ## Dynamic Programming
 |  |
 | ------- |
+| [0062-unique-paths](https://github.com/rishita-pixie/dsa_preparation/tree/master/0062-unique-paths) |
 | [0887-super-egg-drop](https://github.com/rishita-pixie/dsa_preparation/tree/master/0887-super-egg-drop) |
+## Combinatorics
+|  |
+| ------- |
+| [0062-unique-paths](https://github.com/rishita-pixie/dsa_preparation/tree/master/0062-unique-paths) |
 <!---LeetCode Topics End-->
