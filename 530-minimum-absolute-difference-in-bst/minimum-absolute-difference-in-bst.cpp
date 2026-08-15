@@ -15,10 +15,10 @@ int ans=INT_MAX;
 TreeNode* prev=nullptr;
 void solve(TreeNode* root){
     if(root==nullptr) return ;
-solve(root->left);
+solve(root->right);
 if(prev!=nullptr) ans=min(ans,abs(root->val-prev->val)); 
 prev=root;
-solve(root->right);
+solve(root->left);
 }
     int getMinimumDifference(TreeNode* root) {
         solve(root);
