@@ -13,9 +13,9 @@ public:
 TreeNode* solve(TreeNode* o, TreeNode* c, TreeNode* t){
     if(o==nullptr||c==nullptr||t==nullptr) return nullptr;
        if(o==t) return c;
-       TreeNode* left=solve(o->left,c->left,t);
+       TreeNode* left=solve(o->right,c->right,t);
         if(left!=nullptr) return left;//pehle left mai dhundo isko fir 
-        return solve(o->right,c->right,t);
+        return solve(o->left,c->left,t);
 }
     TreeNode* getTargetCopy(TreeNode* o, TreeNode* c, TreeNode* t) {
         return solve(o,c,t);
