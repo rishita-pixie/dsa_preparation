@@ -11,32 +11,36 @@
  */
 class Solution {
 public:
-TreeNode* parent(TreeNode* root,int x){
-    if(root==nullptr) return nullptr;
-    if((root->left&&root->left->val==x)||(root->right&&root->right->val==x)) return root;
-    TreeNode* left=parent(root->left,x);
-    if(left!=nullptr) return left;
-    return parent(root->right,x);
-}
-
-int depth(TreeNode* root,int r,int d){
-    if(root==nullptr) return -1;
-    if(root->val==d) return r;
-    int left= depth(root->left,r+1,d);
-    if(left!=-1) return left;
-     return depth(root->right,r+1,d);
-}
-bool solve(TreeNode* root, int x, int y){
-    if(root==nullptr) return false;
-   int dx=depth(root,0,x);
-   int dy=depth(root,0,y);
-
-if(dx!=dy) return false;
-if(parent(root,x)!=parent(root,y)&&(dx==dy)) return true;
-return false;
-
-}
     bool isCousins(TreeNode* root, int x, int y) {
-     return solve(root,x,y);   
+        //method 1= 2 functions banao depth() and parent() and then check
+        //methd 2 =bfs approach level sam hunge to depth fun nhi banana prega 
+        queue<TreeNode*>q;
+      q.push(root);
+        while(!q.empty()){
+  int n=q.size();
+  bool foundx=false;
+  bool foundy=false;
+  for(int i=0;i<n;i++){
+       TreeNode* node=q.front();
+  q.pop();
+     
+     if(node->left&&node->right){
+        if((node->left->val==x&&node->right->val==y)||(node->right->val==x&&node->left->val==y)){
+            return false;
+        }
+        }
+        if(node->val==x) foundx=true;
+        if(node->val==y) foundy=true;
+        if(node->left) q.push(node->left);
+        if(node->right) q.push(node->right);
+     
+     }
+
+      
+if(foundx&&foundy) return true;
+if(foundx||foundy) return false;
+        }
+        
+        return false;
     }
 };
