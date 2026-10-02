@@ -1,5 +1,9 @@
 class Solution {
 public:
+//storing index in deque 
+// fir ek while loop to cj=hekc ki koi phle ka index to nhi oroesnt ai current index hona chiye like dq.front<i hai to remove frist waala
+// and then rha second wala loop usme if upcoming elemnt presnt list ke lement se  bada hai to rmeove the dq ka elemnt and place the elment that is gretaer fromt hat taht is j uska index
+
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
       int n=nums.size();
       deque<int>dq;
