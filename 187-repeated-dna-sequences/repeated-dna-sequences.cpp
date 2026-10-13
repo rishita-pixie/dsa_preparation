@@ -10,7 +10,7 @@ public:
         if(s.size()<10) return {};
         while(j<s.size()){
             
-        if(curr.size()<10 ) {
+        if(curr.size()<10 && j<s.size() ) {
             curr+=s[j];
        }
       if(curr.size()==10){
