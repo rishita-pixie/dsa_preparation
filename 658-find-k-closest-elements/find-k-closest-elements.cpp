@@ -1,20 +1,23 @@
 class Solution {
 public:
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
-        // slidng window plus 2 pointer approach 
+        //binary search approach hum sochnege ki konsei side ko correct hoga 
+        //bs indices dekhene fir result print ke loye we will be doing left seleft+k tak ke elemnts 
         int n=arr.size();
         vector<int>ans;
         int left=0;
-        int right=n-1;
-        while (right-left+1>k) {
-    if (abs(arr[left] - x) > abs(arr[right] - x)) {
-        left++;
-    } else {
-        right--;
-    }}
-    for(int i=left;i<=right;i++){
-    ans.push_back(arr[i]);
-}
-return ans;
+          int right=n-k;
+           while(left<right){
+          int mid=left+(right-left)/2;
+         if(x-arr[mid]>arr[mid+k]-x)
+    {
+        left=mid+1;
     }
+    else right=mid;
+
+    }
+    for(int i=left;i<left+k;i++){
+        ans.push_back(arr[i]);
+    }
+    return ans;}
 };
