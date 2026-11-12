@@ -6,11 +6,10 @@ public:
         int cnt=0;
         for(int i=0;i<n-1;i++){
             if(nums[i]>=nums[i+1]){
-             while(nums[i]>=nums[i+1]){
-              nums[i+1]++;
-             cnt++;}
+            int diff=nums[i]-nums[i+1]+1;
+            cnt+=diff;
+            nums[i+1]=nums[i]+1;
             }
-          
         }
         return cnt;
     }
