@@ -1,5 +1,5 @@
 class Solution {
-public:
+public://simple age se chalu kar and strt with 1 and same with 1 from last se front so done 
     vector<int> productExceptSelf(vector<int>& nums) {
         int n=nums.size();
         vector<int>ans(n);
